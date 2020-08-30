@@ -1,14 +1,16 @@
-import React from 'react';
-import CardList from './CardList';
-import {robots} from './robots';
-import 'tachyons'
+import React from "react";
+import CardList from "./CardList";
+import SearchBox from "./SearchBox";
+import { robots } from "./robots";
+import "tachyons";
 
 const App = () => {
-    return (
-    <React.Fragment>
-        <h1 className="tc">RoboFriends</h1>
-        <CardList robots={robots} />
-    </React.Fragment>
-    )
-}
+  return (
+    <div className="tc">
+      <h1>RoboFriends</h1>
+      <SearchBox />
+      <CardList robots={robots} />
+    </div>
+  );
+};
 export default App;
