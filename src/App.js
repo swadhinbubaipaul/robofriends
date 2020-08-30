@@ -4,13 +4,32 @@ import SearchBox from "./SearchBox";
 import { robots } from "./robots";
 import "tachyons";
 
-const App = () => {
-  return (
-    <div className="tc">
-      <h1>RoboFriends</h1>
-      <SearchBox />
-      <CardList robots={robots} />
-    </div>
-  );
-};
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      searchfield: "",
+      robot: robots,
+    };
+  }
+
+  onSearchChange = (event) => {
+    this.setState({ searchfield: event.target.value });
+  };
+
+  render() {
+    const filteredroboat = this.state.robot.filter((robot) => {
+      return robot.name
+        .toLowerCase()
+        .includes(this.state.searchfield.toLowerCase());
+    });
+    return (
+      <div className="tc">
+        <h1>RoboFriends</h1>
+        <SearchBox searchChange={this.onSearchChange} />
+        <CardList robots={filteredroboat} />
+      </div>
+    );
+  }
+}
 export default App;
