@@ -21,18 +21,6 @@ function App() {
     setSearchfield(event.target.value);
   };
 
-  // function to fetch users
-  // componentDidMount() {
-  //   fetch(
-  //     "https://raw.githubusercontent.com/swadhinpauldev/MyJsonServer/master/db.json"
-  //   )
-  //     .then((response) => response.json())
-  //     .then((users) => {
-  //       this.setState({ robots: users });
-  //       console.log(users);
-  //     });
-  // }
-
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/swadhinbubaipaul/MyJsonServer/master/db.json"
